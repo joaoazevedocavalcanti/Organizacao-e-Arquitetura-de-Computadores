@@ -1,0 +1,17 @@
+{
+  "states": [
+    { "name": "IDLE", "code": "00", "outputs": { "load": 0, "compute_en": 0, "done": 0 } },
+    { "name": "LOAD", "code": "01", "outputs": { "load": 1, "compute_en": 0, "done": 0 } },
+    { "name": "COMPUTE", "code": "10", "outputs": { "load": 0, "compute_en": 1, "done": 0 } },
+    { "name": "DONE", "code": "11", "outputs": { "load": 0, "compute_en": 0, "done": 1 } }
+  ],
+  "transitions": [
+    { "from": "IDLE", "to": "IDLE", "condition": "start == 0" },
+    { "from": "IDLE", "to": "LOAD", "condition": "start == 1" },
+    { "from": "LOAD", "to": "COMPUTE", "condition": "unconditional" },
+    { "from": "COMPUTE", "to": "COMPUTE", "condition": "c31 == 0" },
+    { "from": "COMPUTE", "to": "DONE", "condition": "c31 == 1" },
+    { "from": "DONE", "to": "DONE", "condition": "start == 1" },
+    { "from": "DONE", "to": "IDLE", "condition": "start == 0" }
+  ]
+}
