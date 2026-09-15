@@ -1,0 +1,44 @@
+vlib work
+vmap work work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying D:/Users/jac2/Documents/lab5/lab5.mpf
+vlog -sv *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:19:32 on Sep 15,2026
+# vlog -reportprogress 300 -sv sc_alu.sv sc_alu_ctrl.sv sc_control.sv sc_cpu.sv sc_cpu_tb.sv sc_datapath.sv sc_dmem.sv sc_imem.sv sc_regfile.sv sc_sign_ext.sv sc_top.sv 
+# -- Compiling module sc_alu
+# -- Compiling module sc_alu_ctrl
+# -- Compiling module sc_control
+# ** Error: (vlog-13069) sc_control.sv(82): near "MemtoReg": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: sc_cpu.sv(40): Illegal declaration after the statement near line '23'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: sc_cpu.sv(55): (vlog-2730) Undefined variable: 'clk'.
+# ** Error: sc_cpu.sv(56): (vlog-2730) Undefined variable: 'rst_n'.
+# ** Error: sc_cpu.sv(65): (vlog-2730) Undefined variable: 'PC'.
+# ** Error: sc_cpu.sv(66): Checker 'sc_datapath' not found.  Instantiation 'datapath' must be of a visible checker.
+# 
+# ** Error: (vlog-13069) sc_cpu.sv(68): near "endmodule": syntax error, unexpected endmodule.
+# ** Error (suppressible): sc_cpu_tb.sv(59): (vlog-2388) 'clk' already declared in this scope (#ublk#174203404#55) at sc_cpu.sv(55).
+# ** Error (suppressible): sc_cpu_tb.sv(60): (vlog-2388) 'rst_n' already declared in this scope (#ublk#174203404#55) at sc_cpu.sv(56).
+# ** Error (suppressible): sc_cpu_tb.sv(61): (vlog-2388) 'PC' already declared in this scope (#ublk#174203404#55) at sc_cpu.sv(65).
+# ** Error: sc_cpu_tb.sv(63): Illegal declaration after the statement near line '47'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error (suppressible): sc_cpu_tb.sv(78): (vlog-2244) Variable 'cycle' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error: sc_cpu_tb.sv(84): Illegal declaration after the statement near line '73'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: sc_cpu_tb.sv(116): (vlog-2730) Undefined variable: 'mem_shadow'.
+# ** Error: sc_cpu_tb.sv(118): (vlog-2730) Undefined variable: 'clk'.
+# ** Error: sc_cpu_tb.sv(119): (vlog-2730) Undefined variable: 'rst_n'.
+# ** Error: sc_cpu_tb.sv(120): (vlog-2730) Undefined variable: 'mem_shadow'.
+# ** Error: sc_cpu_tb.sv(139): (vlog-2730) Undefined variable: 'RESET_CYCLES'.
+# ** Error: sc_cpu_tb.sv(155): (vlog-2730) Undefined variable: 'cycle'.
+# ** Error: sc_cpu_tb.sv(159): (vlog-2730) Undefined variable: 'PC'.
+# ** Error: sc_cpu_tb.sv(166): (vlog-2730) Undefined variable: 'MAX_CYCLES'.
+# -- Compiling module sc_datapath
+# -- Compiling module sc_dmem
+# -- Compiling module sc_imem
+# -- Compiling module sc_regfile
+# -- Compiling module sc_sign_ext
+# -- Compiling module sc_top
+# End time: 11:19:32 on Sep 15,2026, Elapsed time: 0:00:00
+# Errors: 21, Warnings: 0
+# C:/InstallModelSim/modelsim_ase/win32aloem/vlog failed.

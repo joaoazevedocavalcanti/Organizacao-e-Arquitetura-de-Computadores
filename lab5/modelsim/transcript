@@ -1,0 +1,154 @@
+clear
+# invalid command name "clear"
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+vlog -sv *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:22:16 on Sep 15,2026
+# vlog -reportprogress 300 -sv *.sv 
+# ** Error: (vlog-7) Failed to open design unit file "*.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 11:22:16 on Sep 15,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/InstallModelSim/modelsim_ase/win32aloem/vlog failed.
+vmap work work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying D:/Users/jac2/Documents/lab5/modelsim/lab5.mpf
+vlog -sv *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:22:37 on Sep 15,2026
+# vlog -reportprogress 300 -sv *.sv 
+# ** Error: (vlog-7) Failed to open design unit file "*.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 11:22:37 on Sep 15,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/InstallModelSim/modelsim_ase/win32aloem/vlog failed.
+vlog -sv ../sc_alu.sv ../sc_alu_ctrl.sv ../sc_control.sv \
+         ../sc_sign_ext.sv ../sc_regfile.sv               \
+         ../sc_imem.sv ../sc_dmem.sv                      \
+         ../sc_datapath.sv ../sc_cpu.sv ../sc_cpu_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:22:48 on Sep 15,2026
+# vlog -reportprogress 300 -sv ../sc_alu.sv ../sc_alu_ctrl.sv ../sc_control.sv ../sc_sign_ext.sv ../sc_regfile.sv ../sc_imem.sv ../sc_dmem.sv ../sc_datapath.sv ../sc_cpu.sv ../sc_cpu_tb.sv 
+# -- Compiling module sc_alu
+# -- Compiling module sc_alu_ctrl
+# -- Compiling module sc_control
+# -- Compiling module sc_sign_ext
+# -- Compiling module sc_regfile
+# -- Compiling module sc_imem
+# -- Compiling module sc_dmem
+# -- Compiling module sc_datapath
+# -- Compiling module sc_cpu
+# -- Compiling module sc_cpu_tb
+# 
+# Top level modules:
+# 	sc_cpu_tb
+# End time: 11:22:48 on Sep 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -sv ./*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:23:10 on Sep 15,2026
+# vlog -reportprogress 300 -sv ./*.sv 
+# ** Error: (vlog-7) Failed to open design unit file "./*.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 11:23:10 on Sep 15,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/InstallModelSim/modelsim_ase/win32aloem/vlog failed.
+vlog -sv ../*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:23:25 on Sep 15,2026
+# vlog -reportprogress 300 -sv ../sc_alu.sv ../sc_alu_ctrl.sv ../sc_control.sv ../sc_cpu.sv ../sc_cpu_tb.sv ../sc_datapath.sv ../sc_dmem.sv ../sc_imem.sv ../sc_regfile.sv ../sc_sign_ext.sv ../sc_top.sv 
+# -- Compiling module sc_alu
+# -- Compiling module sc_alu_ctrl
+# -- Compiling module sc_control
+# -- Compiling module sc_cpu
+# -- Compiling module sc_cpu_tb
+# -- Compiling module sc_datapath
+# -- Compiling module sc_dmem
+# -- Compiling module sc_imem
+# -- Compiling module sc_regfile
+# -- Compiling module sc_sign_ext
+# -- Compiling module sc_top
+# 
+# Top level modules:
+# 	sc_cpu_tb
+# 	sc_top
+# End time: 11:23:26 on Sep 15,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim -gui work.sc_cpu_tb
+# vsim -gui work.sc_cpu_tb 
+# Start time: 11:23:50 on Sep 15,2026
+# Loading sv_std.std
+# Loading work.sc_cpu_tb
+# Loading work.sc_cpu
+# Loading work.sc_control
+# Loading work.sc_datapath
+# Loading work.sc_imem
+# Loading work.sc_regfile
+# Loading work.sc_sign_ext
+# Loading work.sc_alu_ctrl
+# Loading work.sc_alu
+# Loading work.sc_dmem
+run -all
+# [cycle   1] REG  x1  <= 00000005
+# [cycle   2] REG  x2  <= 00000003
+# [cycle   3] REG  x3  <= 00000008
+# [cycle   4] REG  x4  <= 00000002
+# [cycle   5] REG  x5  <= 00000001
+# [cycle   6] REG  x6  <= 00000007
+# [cycle   7] REG  x7  <= 00000001
+# [cycle   8] REG  x8  <= 00000000
+# [cycle   9] MEM  [word 02] <= 00000008
+# [cycle  10] MEM  [word 03] <= 00000002
+# [cycle  11] MEM  [word 04] <= 00000001
+# [cycle  12] MEM  [word 05] <= 00000007
+# [cycle  13] MEM  [word 06] <= 00000001
+# [cycle  14] MEM  [word 07] <= 00000000
+# [cycle  16] REG  x9  <= 00000008
+# 
+# === PASS: all 40 lines match ===
+# ** Note: $finish    : ../sc_cpu_tb.sv(178)
+#    Time: 450 ns  Iteration: 1  Instance: /sc_cpu_tb
+# 1
+# Break in Module sc_cpu_tb at ../sc_cpu_tb.sv line 178
+quit -sim
+# End time: 11:25:47 on Sep 15,2026, Elapsed time: 0:01:57
+# Errors: 0, Warnings: 3
+# Load canceled
+vsim -gui work.sc_cpu_tb
+# vsim -gui work.sc_cpu_tb 
+# Start time: 11:26:22 on Sep 15,2026
+# Loading sv_std.std
+# Loading work.sc_cpu_tb
+# Loading work.sc_cpu
+# Loading work.sc_control
+# Loading work.sc_datapath
+# Loading work.sc_imem
+# Loading work.sc_regfile
+# Loading work.sc_sign_ext
+# Loading work.sc_alu_ctrl
+# Loading work.sc_alu
+# Loading work.sc_dmem
+run -all
+# [cycle   1] REG  x1  <= 00000005
+# [cycle   2] REG  x2  <= 00000003
+# [cycle   3] REG  x3  <= 00000008
+# [cycle   4] REG  x4  <= 00000002
+# [cycle   5] REG  x5  <= 00000001
+# [cycle   6] REG  x6  <= 00000007
+# [cycle   7] REG  x7  <= 00000001
+# [cycle   8] REG  x8  <= 00000000
+# [cycle   9] MEM  [word 02] <= 00000008
+# [cycle  10] MEM  [word 03] <= 00000002
+# [cycle  11] MEM  [word 04] <= 00000001
+# [cycle  12] MEM  [word 05] <= 00000007
+# [cycle  13] MEM  [word 06] <= 00000001
+# [cycle  14] MEM  [word 07] <= 00000000
+# [cycle  16] REG  x9  <= 00000008
+# 
+# === PASS: all 40 lines match ===
+# ** Note: $finish    : ../sc_cpu_tb.sv(178)
+#    Time: 450 ns  Iteration: 1  Instance: /sc_cpu_tb
+# 1
+# Break in Module sc_cpu_tb at ../sc_cpu_tb.sv line 178
