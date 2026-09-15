@@ -64,17 +64,6 @@ module sc_control (
         Branch   = 1'b0;
         ALUOp    = 2'b00;
 
-//   Signal    | R-type | lw | sw | beq
-//   ----------|--------|----|----|-----
-//   ALUSrc    |   0    |  1 |  1 |  0    0=reg, 1=imm
-//   MemtoReg  |   0    |  1 |  - |  -    0=ALU, 1=mem
-//   RegWrite  |   1    |  1 |  0 |  0
-//   MemRead   |   0    |  1 |  0 |  0
-//   MemWrite  |   0    |  0 |  1 |  0
-//   Branch    |   0    |  0 |  0 |  1
-//   ALUOp[1]  |   1    |  0 |  0 |  0
-//   ALUOp[0]  |   0    |  0 |  0 |  1
-
         case (Opcode)
             R_TYPE: begin
                 // TODO: assert the correct control signals for R-type instructions
