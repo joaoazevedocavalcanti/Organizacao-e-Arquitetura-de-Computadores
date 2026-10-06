@@ -1,0 +1,33 @@
+-- =============================================================================
+-- data.mif
+-- Memoria de dados - Laboratorio 06, Etapa 6 (contador de 9 bits nos LEDG)
+--
+-- Endereco de palavra = endereco_de_byte / 4  (sc_dmem usa alu_result[9:2])
+--
+-- O hardware nao possui addi, entao toda constante usada pelo programa
+-- precisa ser carregada daqui com lw.
+--
+--   word 000 (byte  0) : 0x00000400 = base do MMIO
+--   word 001 (byte  4) : 0x00000001 = passo do contador (+1 / -1)
+--   word 002 (byte  8) : 0x00000008 = mascara do KEY[3] (incrementa)
+--   word 003 (byte 12) : 0x00000004 = mascara do KEY[2] (decrementa)
+--   word 004 (byte 16) : 0x00000002 = mascara do KEY[1] (zera)
+-- =============================================================================
+
+DEPTH = 256;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+
+000 : 00000400;  -- base do MMIO
+001 : 00000001;  -- passo do contador
+002 : 00000008;  -- mascara KEY[3] - incrementa
+003 : 00000004;  -- mascara KEY[2] - decrementa
+004 : 00000002;  -- mascara KEY[1] - zera
+
+[005..0FF] : 00000000;
+
+END;
